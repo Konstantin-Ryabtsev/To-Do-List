@@ -163,18 +163,20 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SwitchCell" id="MRn-Jh-ZRM" customClass="SwitchCell" customModule="To_Do_List" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="605" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="605" width="414" height="53.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MRn-Jh-ZRM" id="TO9-vJ-kp3">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="53.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-GE-9h7" customClass="SectionSwitch" customModule="To_Do_List" customModuleProvider="target">
-                                            <rect key="frame" x="182.5" y="6.5" width="51" height="31"/>
+                                            <rect key="frame" x="182.5" y="11" width="51" height="31.5"/>
                                         </switch>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="JQE-GE-9h7" firstAttribute="centerY" secondItem="TO9-vJ-kp3" secondAttribute="centerY" id="dvo-Fo-FHv"/>
+                                        <constraint firstItem="JQE-GE-9h7" firstAttribute="top" secondItem="TO9-vJ-kp3" secondAttribute="topMargin" id="jrR-zJ-5iq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="JQE-GE-9h7" secondAttribute="bottom" id="p7L-6a-G9r"/>
                                         <constraint firstItem="JQE-GE-9h7" firstAttribute="centerX" secondItem="TO9-vJ-kp3" secondAttribute="centerX" id="pJv-2t-AWJ"/>
                                     </constraints>
                                 </tableViewCellContentView>

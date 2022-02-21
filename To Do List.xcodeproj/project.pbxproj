@@ -16,6 +16,9 @@
 		0A0B60E427C1B328000382F6 /* SectionImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B60E327C1B328000382F6 /* SectionImagePickerController.swift */; };
 		0A0B60E627C1B371000382F6 /* SectionSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B60E527C1B371000382F6 /* SectionSwitch.swift */; };
 		0A0B60E827C1B3BD000382F6 /* SectionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B60E727C1B3BD000382F6 /* SectionTextField.swift */; };
+		0A3C6F2E27C3FC2D00BD56E9 /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C6F2B27C3FC2D00BD56E9 /* Screenshot02.png */; };
+		0A3C6F2F27C3FC2D00BD56E9 /* Screenshot03.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C6F2C27C3FC2D00BD56E9 /* Screenshot03.png */; };
+		0A3C6F3027C3FC2D00BD56E9 /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C6F2D27C3FC2D00BD56E9 /* Screenshot01.png */; };
 		0AB371E427BF04EA00DF3BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB371E327BF04EA00DF3BAC /* AppDelegate.swift */; };
 		0AB371E627BF04EA00DF3BAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB371E527BF04EA00DF3BAC /* SceneDelegate.swift */; };
 		0AB371EB27BF04EA00DF3BAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB371E927BF04EA00DF3BAC /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 		0A0B60E327C1B328000382F6 /* SectionImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionImagePickerController.swift; sourceTree = "<group>"; };
 		0A0B60E527C1B371000382F6 /* SectionSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSwitch.swift; sourceTree = "<group>"; };
 		0A0B60E727C1B3BD000382F6 /* SectionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTextField.swift; sourceTree = "<group>"; };
+		0A3C6F2B27C3FC2D00BD56E9 /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
+		0A3C6F2C27C3FC2D00BD56E9 /* Screenshot03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot03.png; sourceTree = "<group>"; };
+		0A3C6F2D27C3FC2D00BD56E9 /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
 		0AB371E027BF04EA00DF3BAC /* To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB371E327BF04EA00DF3BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AB371E527BF04EA00DF3BAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +82,16 @@
 			path = VIew;
 			sourceTree = "<group>";
 		};
+		0A3C6F2A27C3FC2D00BD56E9 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				0A3C6F2B27C3FC2D00BD56E9 /* Screenshot02.png */,
+				0A3C6F2C27C3FC2D00BD56E9 /* Screenshot03.png */,
+				0A3C6F2D27C3FC2D00BD56E9 /* Screenshot01.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		0AB371D727BF04EA00DF3BAC = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +115,7 @@
 				0AB3720127BF12D300DF3BAC /* Cells */,
 				0AB3720427BF1BD700DF3BAC /* Extensions */,
 				0AB371F727BF04FF00DF3BAC /* Model */,
+				0A3C6F2A27C3FC2D00BD56E9 /* Screenshots */,
 				0AB371FB27BF08DB00DF3BAC /* Storyboards */,
 				0A0B60E027C1B218000382F6 /* VIew */,
 				0AB371FC27BF08FB00DF3BAC /* View Controllers */,
@@ -225,7 +242,10 @@
 			files = (
 				0AB371F027BF04F000DF3BAC /* LaunchScreen.storyboard in Resources */,
 				0AB371ED27BF04F000DF3BAC /* Assets.xcassets in Resources */,
+				0A3C6F3027C3FC2D00BD56E9 /* Screenshot01.png in Resources */,
 				0AB371EB27BF04EA00DF3BAC /* Main.storyboard in Resources */,
+				0A3C6F2F27C3FC2D00BD56E9 /* Screenshot03.png in Resources */,
+				0A3C6F2E27C3FC2D00BD56E9 /* Screenshot02.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

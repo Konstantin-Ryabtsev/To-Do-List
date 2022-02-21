@@ -18,7 +18,7 @@ class ToDoTableViewController: UITableViewController {
             ToDo(title: "Купить хлеб", notes: "Батон", image: UIImage(named: "bread")),
             ToDo(title: "Записать ребенка в школу", image: UIImage(named: "school")),
             ToDo(title: "Подготовить питч", image: UIImage(named: "pitch")),
-            ToDo(title: "Test wo image", isComplete: true, image: UIImage())
+            //ToDo(title: "Test wo image", isComplete: true, image: UIImage())
         ]
         navigationItem.leftBarButtonItem = editButtonItem
     }
@@ -71,13 +71,11 @@ class ToDoTableViewController: UITableViewController {
         case "AddItemSegue":
             let destination = segue.destination as! ToDoItemTableViewController
             destination.todo = ToDo(image: UIImage())
-            print(#line, #function, todos)
             
         case "EditItemSegue":
             guard let selectedIndex = tableView.indexPathForSelectedRow else { return }
             let destination = segue.destination as! ToDoItemTableViewController
             destination.todo = todos[selectedIndex.row].copy() as! ToDo
-            print(#line, #function, todos)
         
         case .none:
             break
@@ -95,24 +93,21 @@ class ToDoTableViewController: UITableViewController {
         
         if let selectedIndex = tableView.indexPathForSelectedRow {
             todos[selectedIndex.row] = todo
-            tableView.reloadRows(at: [selectedIndex], with: .automatic)
+            if let toDoCell = tableView.cellForRow(at: selectedIndex) as? ToDoCell {
+                if let stackView = toDoCell.stackView {
+                    stackView.arrangedSubviews.forEach { subview in
+                        stackView.removeArrangedSubview(subview)
+                        subview.removeFromSuperview()
+                    }
+                }
+            }
+            tableView.reloadRows(at: [selectedIndex], with: .none)
+            
         } else {
             let indexPath = IndexPath(row: todos.count, section: 0)
             todos.append(todo)
             tableView.insertRows(at: [indexPath], with: .automatic)
         }
-        
-        /*
-        if let toDoCell = tableView.cellForRow(at: selectedIndex) as? ToDoCell {
-            if let stackView = toDoCell.stackView {
-                stackView.arrangedSubviews.forEach { subview in
-                    stackView.removeArrangedSubview(subview)
-                    subview.removeFromSuperview()
-                }
-            }
-        }
-        */
-        print(#line, #function, todos)
     }
     
 }
@@ -130,18 +125,22 @@ extension ToDoTableViewController /*: UITableViewDataSource */ {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        print(#line, #function)
-    }
-    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .none:
             break
         case .delete:
             todos.remove(at: indexPath.row)
+            if let toDoCell = tableView.cellForRow(at: indexPath) as? ToDoCell {
+                if let stackView = toDoCell.stackView {
+                    stackView.arrangedSubviews.forEach { subview in
+                        stackView.removeArrangedSubview(subview)
+                        subview.removeFromSuperview()
+                    }
+                }
+            }
             tableView.deleteRows(at: [indexPath], with: .fade)
-            print(#line, #function, todos)
+            
         case .insert:
             break
         @unknown default:
