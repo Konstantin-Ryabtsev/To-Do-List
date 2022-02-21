@@ -10,17 +10,17 @@ import UIKit
 class ToDoItemTableViewController: UITableViewController {
     // MARK: - Properties
     var todo = ToDo()
+    var datePickers = [IndexPath: Bool]()
 }
 
 // MARK: - UITableViewDataSource
 extension ToDoItemTableViewController /*: UITableViewDataSource */ {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let value = todo.values[indexPath.section]
-        if let cell = tableView.cellForRow(at: indexPath) {
-            return cell.isHidden ? 0 : UITableView.automaticDimension
-        } else {
-            return /*value is Date && indexPath.row == 1 ? 0 : */UITableView.automaticDimension
+        if value is Date && indexPath.row == 1 {
+            return datePickers[indexPath] ?? true ? 0 : UITableView.automaticDimension
         }
+        return UITableView.automaticDimension
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,6 +43,7 @@ extension ToDoItemTableViewController /*: UITableViewDataSource */ {
         let key = todo.capitalizedKeys[section]
         return key
     }
+    
 }
 
 // MARK: - UITableViewDelegate
@@ -51,6 +52,14 @@ extension ToDoItemTableViewController /*: UITableViewDelegate */ {
         let value = todo.values[indexPath.section]
         
         if value is Date {
+            let indexPathDatePicker = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            if let cell = tableView.cellForRow(at: indexPathDatePicker) as? DatePickerCell {
+                cell.datePicker.isHidden.toggle()
+                datePickers[indexPathDatePicker] = cell.datePicker.isHidden
+            }
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            
             // TODO: Implement sow/hide date picker
             
         } else if value is UIImage {
@@ -108,6 +117,7 @@ extension ToDoItemTableViewController {
                 cell.datePicker.minimumDate = Date()
                 cell.datePicker.preferredDatePickerStyle = .wheels
                 cell.datePicker.section = indexPath.section
+                datePickers[indexPath] = cell.datePicker.isHidden
                 return cell
                 
             default:

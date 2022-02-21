@@ -11,6 +11,6 @@ class DateCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     
     func setDate(_ date: Date) {
-        label.text = date.formatedDate
+        label.text = date.formatedFullDate
     }
 }

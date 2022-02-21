@@ -46,8 +46,16 @@ import UIKit
             isComplete: isComplete,
             dueDate: dueDate,
             notes: notes,
-            image: image?.copy() as? UIImage)
+            image: image?.copy() as? UIImage
+        )
         
         return newToDo
+    }
+}
+
+// MARK: - CustomStringConvertible
+extension ToDo /*: CustomStringConvertible */ {
+    override var description: String {
+        return "title: \(title)"
     }
 }

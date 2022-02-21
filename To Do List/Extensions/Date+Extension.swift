@@ -8,10 +8,18 @@
 import Foundation
 
 extension Date {
-    var formatedDate: String {
+    var formatedShortDate: String {
         let formatter = DateFormatter()
         formatter.locale = Locale.current
         formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        return formatter.string(from: self)
+    }
+    
+    var formatedFullDate: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale.current
+        formatter.dateStyle = .full
         formatter.timeStyle = .none
         return formatter.string(from: self)
     }
